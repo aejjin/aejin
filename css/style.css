@@ -14121,3 +14121,8 @@ textarea.form-control {
 
 .main_text img{width: 60% !important; float: inherit}
 .owl-item{height: 550px!important}
+
+@media (max-width:1000px){
+    
+    .main_text img{width: 150% !important; float: none; padding-top: 90%}
+}
