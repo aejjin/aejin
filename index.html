@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AEJIN.P</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+  #pop_up1{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;overflow-y: scroll;}
+  #pop_up2{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}         
+    #pop_up3{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}
+        #pop_up4{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}
+        #pop_up5{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}
+        #pop_up6{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}
+        #pop_up7{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}
+        #pop_up8{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}
+        #pop_up9{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}
+        #pop_up10{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}
+        #pop_up11{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}
+         #pop_up12{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}
+         #pop_up13{width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0, 0.6); z-index:99; display:none;}
+        
+       
+           
+  .gallery_img{position:fixed; left:50%; top:50%; transform:translate(-50%,-50%);  background:white; text-align:center;overflow-y: auto}
+  .gallery_img img{display:block; padding:20px; margin: 0 auto}
+  button{cursor:pointer;}
+  .gallery_btn{margin:20px 0; text-align:center;}
+  .gallery_btn button{padding:6px 12px; border:none; border-radius:6px;background:#605d5e; color:white;}
+  .gallery_popup{margin-top:20px; margin-bottom:20px;} 
+  .select_btn{background-color:orange}
+    
+   </style>
+   
+   
+   
+    <script src="js/jquery-3.1.1.min.js"></script>
+<script>
+  $(function(){
+     $('.gallery_popup a').each(function(){
+         
+         $(this).click(function(){
+       /*
+        1. a와 짝이 되는 div를 기억함
+        2. 다른창은 모두 닫고  1의 창만 열림
+        3. 선택된 a에만 디자인을 추가하고 나머지 a는 디자인이 제거됨    
+*/
+        var aHref = $(this).attr('href'); 
+               //var 해당 이벤트 내에서만 작동함
+        $('.pop').hide();
+        $(aHref).show();
+        $('.gallery_popup a').removeClass('select_btn');   
+        $(this).addClass('select_btn');
+             
+ /*   4. 닫기 버튼을 클릭하면 해당 div만 닫힘 */
+        $('.gallery_btn').click(function(){
+            $(aHref).hide(); 
+              //var aHref 의 값을 받기 위해서 같은 공간에서 사용됨
+            $('.gallery_popup a').removeClass('select_btn');  
+        })  //btn(닫기) click  
+
+     }) //a click
+      /*  $('.btn').click(function(){
+            $('.pop').hide(); 
+              //var aHref 의 값을 받기 위해서 같은 공간에서 사용됨
+            $('.modal a').removeClass('select_btn');  
+        })  //btn(닫기) click */  
+         
+         
+    }) //a each
+      
+      
+  }) //j end
+</script>
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html" style="color: #0f5346">AEJIN.P</a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
+	          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>gallery</span></a></li>
+	          <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Branding</span></a></li>
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	<section></section>
+      <section id="home-section" class="hero">
+		  <div class="home-slider  owl-carousel" style="background-color: #fcfbe0; background-size: contain; background-repeat: no-repeat; background-position: center center">
+		  <div class="main_in" style="width: 60%; margin: 0 auto; padding-top: 7%">
+		
+       <div class="main_text" style="width: 50%;float:right; margin: 0 auto"><img src="images/main_text.gif"></div>
+		   </div>
+	    </div>
+    </section>
+
+    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+    	<div class="container">
+    		<div class="row d-flex">
+    			<div class="col-md-6 col-lg-5 d-flex">
+    				<div class="img-about img d-flex align-items-stretch">
+    					<div class="overlay"></div>
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/aejin.jpg);">
+	    				</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+    				<div class="row justify-content-start pb-3">
+		          <div class="col-md-12 heading-section ftco-animate">
+		          	<h1 class="big">About</h1>
+		            <h2 class="mb-4">About Me</h2>
+		            
+		            <ul class="about-info mt-4 px-md-0 px-2">
+		            	<li class="d-flex"><span>Name:</span> <span>박애진</span></li>
+		            	<li class="d-flex"><span>Date of birth:</span> <span>December 11, 1992</span></li>
+		            	<li class="d-flex"><span>Email:</span> <span>aejinp92@gmail.com</span></li>
+		            	<li class="d-flex"><span>Phone: </span> <span>010-4890-9747</span></li>
+		            	<li class="d-flex"><span>History: </span> <span>2020.02.24-2020.07.29<br>부산IT교육센터 반응형 웹퍼블리싱</span></li>
+		            	<li class="d-flex"><span> </span> <span>2012.03~2014.02<br>유한대학교 산업일본어과 졸업</span></li>
+		            	<li class="d-flex"><span></span> <span>2008.03~2010.02<br>영락고등학교 졸업</span></li>
+		            </ul>
+		          </div>
+		        </div>
+	          
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+   
+		
+		<section class="ftco-section" id="skills-section">
+			<div class="container">
+				<div class="row justify-content-center pb-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<h1 class="big big-2">Skills</h1>
+            <h2 class="mb-4">My Skills</h2>
+           
+          </div>
+        </div>
+				<div class="row">
+					<div class="col-md-6 animate-box">
+						<div class="progress-wrap ftco-animate">
+							<h3>Photoshop</h3>
+							<div class="progress">
+							 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
+							  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
+							    <span>90%</span>
+							  	</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 animate-box">
+						<div class="progress-wrap ftco-animate">
+							<h3>illustration</h3>
+							<div class="progress">
+							 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="90"
+							  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
+							    <span>90%</span>
+							  	</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 animate-box">
+						<div class="progress-wrap ftco-animate">
+							<h3>HTML5</h3>
+							<div class="progress">
+							 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="85"
+							  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
+							    <span>85%</span>
+							  	</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 animate-box">
+						<div class="progress-wrap ftco-animate">
+							<h3>CSS3</h3>
+							<div class="progress">
+							 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="80"
+							  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
+							    <span>80%</span>
+							  	</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+ 
+
+    <section class="ftco-section ftco-project" id="projects-section" style="background-color: #fcfbe0; background-size: cover">
+    	<div class="container">
+    		<div class="row justify-content-center pb-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<h1 class="big big-2">Gallery</h1>
+            <h2 class="mb-4">Gallery</h2>
+          </div>
+        </div>
+    		<div class="row gallery_popup">
+    			<a href="#pop_up1"><div class="col-md-4 popup1">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-4.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#pop_up1">쇼핑몰 팝업</a></h3>
+	    					<span>Pop up</span>
+	    				</div>
+    				</div>
+  				</div></a>
+  				
+  				
+<div id="pop_up1" class="pop">
+	<div class="gallery_img">
+     <div class="banner">
+      
+       <h2 style="color: #000;padding-top: 40px">POP UP # 1</h2>
+     <p>클로브 썸머시즌 할인 이벤트 팝업</p>
+     <div class="scroll" style="overflow-y: hidden!important;">
+      <img src="images/neonpopup.gif">
+         </div>
+      </div>
+       <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+    </div>
+</div>
+  			
+  				
+  				
+  				
+  				<a href="#pop_up2"><div class="col-md-8 popup2">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-5.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+                            <h3><a href="#pop_up2">현대카드 메인 배너</a></h3>
+	    					<span>Banner</span>
+	    				</div>
+    				</div>
+                    </div></a>
+                    
+                    
+   <div id="pop_up2" class="pop">
+	<div class="gallery_img" style="background-image: url(images/spring_bannerbg.jpg)">
+      <div class="banner">
+     <h2 style="color: #000;padding-top: 40px">BANNER # 1</h2>
+     <p>현대카드 이벤트 메인 배너</p>
+  	<img src="images/spring_banner.png">
+      <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+     </div>
+      
+    </div>
+</div>
+               <!----------여기까지 선생님-------->
+               
+               		
+
+              
+              
+               <!--------------------->
+               
+               		<a href="#pop_up3"><div class="col-md-8 popup3">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-1m.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+                            <h3><a href="#pop_up3">베스킨라빈스 보스턴 크림파이 배너</a></h3>
+	    					<span>Banner</span>
+	    				</div>
+    				</div>
+                    </div></a>
+                    
+             
+                    
+   <div id="pop_up3" class="pop">
+	<div class="gallery_img" style="background-image: url(images/boston_bannerbg.jpg)">
+     <div class="banner">
+     <h2 style="color: #000;padding-top: 40px">BANNER # 2</h2>
+     <p>베스킨라빈스 보스턴크림파이 해시태그 이벤트 배너</p>
+  	<img src="images/boston_banner.png">
+       <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+     </div>
+     
+    </div>
+</div>
+               
+               
+     	<a href="#pop_up4"><div class="col-md-4 popup4">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-2.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#pop_up4">도깨비 인테리어팁 </a></h3>
+	    					<span>card news</span>
+	    				</div>
+    				</div>
+  				</div></a>
+  				
+  				
+  			
+	
+
+  				
+  				
+<div id="pop_up4" class="pop">
+	<div class="gallery_img">
+     <div class="banner">
+     <h2 style="color: #000;padding-top: 40px">CARD NEWS # 1</h2>
+     <p>도깨비 인테리어 팁</p>
+     <div class="scroll">
+  	<img src="images/docaednews.jpg">
+         </div>
+     </div>
+       <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+    </div>
+</div>          
+             
+               
+               
+    	<a href="#pop_up5"><div class="col-md-4 popup5">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/costom.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#pop_up5">클로브 커스텀 스튜디오 오픈 </a></h3>
+	    					<span>Pop up</span>
+	    				</div>
+    				</div>
+  				</div></a>
+  				
+  				
+  				
+<div id="pop_up5" class="pop">
+	<div class="gallery_img">
+   <div class="banner">
+    <h2 style="color: #000;padding-top: 40px">POP UP # 2</h2>
+         <p>클로브 커스텀 스튜디오 오픈</p>
+         <div class="scroll" style="overflow-y: hidden!important;">
+	    				<img src="images/custum.jpg">
+       </div>
+      </div>
+  
+  
+      <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+    </div>
+</div>
+  		
+  				
+  				
+  				
+  				
+  				<a href="#pop_up6"><div class="col-md-8 popup6">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-6.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+                            <h3><a href="#pop_up6">오설록 이벤트 배너</a></h3>
+	    					<span>Banner</span>
+	    				</div>
+    				</div>
+                    </div></a>
+                    
+             
+   <div id="pop_up6" class="pop">
+	<div class="gallery_img" style="background-image: url(images/osullocbg.jpg)">
+      <div class="banner">
+    <h2 style="color: #000;padding-top: 40px">BANNER # 3</h2>
+         <p>오설록 크리스마스케이크 할인이벤트 배너</p>
+  	<img src="images/osulloc_03.png">
+       <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+          </div>
+      
+    </div>
+</div>
+          
+          
+            		  				
+
+           
+               <!----------------------------------->
+               <a href="#pop_up7"><div class="col-md-8 popup7">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/Untitled-1.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+                            <h3><a href="#pop_up7">쁨클리닉 배너</a></h3>
+	    					<span>Banner</span>
+	    				</div>
+    				</div>
+                    </div></a>
+                    
+             
+                    
+   <div id="pop_up7" class="pop">
+	<div class="gallery_img" style="background-image: url(images/ppeumbg.jpg)">
+     <div class="banner">
+    <h2 style="color: #000;padding-top: 40px">BANNER # 4</h2>
+         <p>쁨클리닉 메인배너</p>
+  	<img src="images/ppem_03.png">
+      <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+        </div>
+    </div>
+</div>
+               
+	
+  				<a href="#pop_up13"><div class="col-md-4">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/popup_clove.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#pop_up13">클로브팝업</a></h3>
+	    					<span>Pop up</span>
+	    				</div>
+    				</div>
+                    </div></a>
+                    
+  					<div id="pop_up13" class="pop">
+	<div class="gallery_img">
+     <div class="banner">
+     <h2 style="color: #000;padding-top: 40px">POP UP # 3</h2>
+        <p>클로브 첫구매 이벤트</p>
+        <div class="scroll" style="overflow-y: hidden!important;">
+      <img src="images/popup_cloveinner.jpg">
+         </div>
+        </div>
+     
+      <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+    </div>
+</div>               
+  		         
+  				       
+              
+                    <a href="#pop_up9"><div class="col-md-4 popup9">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/project-3.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#pop_up9">꿈날개_면접시 유의사항 카드뉴스 </a></h3>
+	    					<span>card news</span>
+	    				</div>
+    				</div>
+  				</div></a>
+  			           				
+  			
+  				
+<div id="pop_up9" class="pop">
+	<div class="gallery_img">
+     <div  class="banner">
+      <h2 style="color: #000;padding-top: 40px">CARDNEWS # 2</h2>
+         <p>꿈날개 카드뉴스</p>
+           <div class="scroll">
+  	<img src="images/cndreamwings.jpg" style="width: 100%; margin: 0 auto">
+        </div>
+       <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+    </div>
+    </div>
+</div>
+              <a href="#pop_up10"><div class="col-md-8 popup10">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/C-FESTIVAL.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+                            <h3><a href="#pop_up10">C-FESTIVAL 이벤트 메인배너</a></h3>
+	    					<span>Banner</span>
+	    				</div>
+    				</div>
+                    </div></a>
+                    
+             
+                    
+  				
+<div id="pop_up10" class="pop">
+
+	<div class="gallery_img"  style="background-image: url(images/C-FESTI%20bg.jpg)">
+     <div class="banner">
+      <h2 style="color: #000;padding-top: 40px">BANNER # 5</h2>
+        
+         <p>C-FESTIVAL 메인</p>
+  	
+     <img src="images/cfe.png">
+ 
+       <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+    </div>
+    </div>
+</div>       
+               
+               
+               
+               
+               
+               
+               
+               
+    			
+    				
+    	
+
+                    
+    		
+    		
+  				
+  		
+  				<a href="#pop_up11"><div class="col-md-4">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/MOCK2.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#pop_up11">클로브 여름세일</a></h3>
+	    					<span>POP UP</span>
+	    				</div>
+    				</div>
+                    </div></a>
+                    
+                    <div id="pop_up11" class="pop">
+	<div class="gallery_img">
+     <div class="banner">
+   <h2 style="color: #000;padding-top: 40px">POP UP # 4</h2>
+     <p>클로브 여름시즌세일</p>
+     <div class="scroll" style="overflow-y: hidden!important;">
+  	<img src="images/banner1212.jpg">
+         </div>
+        </div>
+       <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+    </div>
+</div>  	
+  				
+  				
+  				
+  				<a href="#pop_up12"><div class="col-md-4">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/about_clove.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#pop_up12">클로브 회사소개</a></h3>
+	    					<span>about clove</span>
+	    				</div>
+    				</div>
+                </div></a>
+                
+            
+  				
+  				
+  						<div id="pop_up12" class="pop">
+	<div class="gallery_img">
+     <div class="banner">
+      <h2 style="color: #000;padding-top: 40px">PAGE DESIGN # 1</h2>
+         <p>클로브 회사소개 페이지</p>
+          <div class="scroll">
+  	<img src="images/aboutclove.jpg" style="width: 100%; margin: 0 auto">
+        </div>
+       <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+    </div>
+    </div>
+</div>
+  				
+  				
+  				
+  				
+  				<a href="#pop_up8"><div class="col-md-4 popup8">
+    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/banner1.jpg);">
+    					<div class="overlay"></div>
+	    				<div class="text text-center p-4">
+	    					<h3><a href="#pop_up8">이디야 고객만족 캠페인 </a></h3>
+	    					<span>card news</span>
+	    				</div>
+    				</div>
+  				</div></a>
+  				
+  			
+  				
+  						
+<div id="pop_up8" class="pop">
+	<div class="gallery_img">
+      <div class="banner">
+      <h2 style="color: #000;padding-top: 40px">BANNER # 3</h2>
+         <p>이디야 고객만족캠페인</p>
+           <img src="images/ediya.png">
+       <div class="gallery_btn" style="position: absolute; top: 25px;right: 50px">
+       	<button>X</button>
+      </div>
+    </div>
+     
+     
+    </div>
+</div>     
+  		
+
+	
+        
+       
+  
+  			
+  				
+  				
+  				
+    		</div>
+    	</div>
+    </section>
+
+
+    <section class="ftco-section" id="blog-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Branding</h1>
+            <h2 class="mb-4">Branding</h2>
+           
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="#" class="block-20" style="background-image: url('images/image_1.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">Apil, 2020</span>
+	                	
+	                	
+	                </p>
+                </div>
+                <h3 class="heading"><a href="single.html">재능마켓 도깨비</a></h3>
+                <p>마치 도깨비가 마법을 부리듯, 다재다능한 재능이 모여있
+는곳을 표현하고자 도깨비로 캐릭터 선정을 하였습니다.</p>
+             <div class="button_set">
+             <a href="web_dokkae.html"><button class="web">WEB</button></a>
+             <a href="bxdokkaebee.html"><button class="bx">BX</button>
+                 </a>
+                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="#" class="block-20" style="background-image: url('images/image_2.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">May, 2020</span>
+	                	
+	                	
+	                </p>
+                </div>
+                <h3 class="heading"><a href="single.html">온라인 여성취업지원 꿈날개</a></h3>
+                <p>꿈날개는 자유로운 하늘에 꿈을 날개처럼 펼치도록하는 의미로
+하늘색과 날개를 시각화하였습니다.
+</p>
+      <div class="button_set">
+             <a href="web_dream.html"><button class="web">WEB</button></a>
+             <a href="bxdreamwings.html"><button class="bx">BX</button></a>
+             </div>       
+              </div>
+            </div>
+          </div>
+           <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">June, 2020</span>
+	                
+	                	
+	                </p>
+                </div>
+                <h3 class="heading"><a href="http://jjolgit.cafe24.com/">clove</a></h3>
+                <p>clove 클로브 공식몰입니다. 곧 다가올 여름을 대비한 바캉스 네일을 전체적인 컨셉으로 잡아 파스텔컬러와 시원한 구름 등을 이용하여 </p>
+                <div class="button_set">
+             <a href="http://jjolgit.cafe24.com/" target="blank"><button class="web" style="width: 100% !important">Go Shop</button></a>
+             
+             </div>  
+              </div>
+            </div>
+          </div>
+          
+          
+         
+        </div>
+      </div>
+    </section>
+
+   
+   <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/immonkey2.jpg); background-size: contain">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2 style="color: #392416">I'm <span style="color: #ffd200 !important">WEBDESIGNER</span> </h2>
+						<p style="font-weight: bolder; color: #392416 !important">내가 잘하는 것에만 그치지 않고 , 배움의 자세를 <br>유지하는것이 저의 목표입니다</p>
+						<p class="mb-0"><a href="#" class="btn btn-primary py-3 px-5" style="background: #0f5346 !important; border: none !important; color: #fff !important">Hire me</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+  <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+    <!----  <div class="container">
+      
+      <div class="row no-gutters block-9">
+          <div class="col-md-6 order-md-last d-flex">
+            <form action="#" class="bg-light p-4 p-md-5 contact-form">
+              
+              <h1 style="color: #808080;paddin;padding: 0px !important;line-height: 0rem; font-weight: bolder">EPILOGUE.</h1>
+              <h1 style="color: #fff; padding: 0px !important; font-weight: bolder">EPILOGUE.</h1>
+              <h3 style="color: #424241 !important; font-size: 1rem; line-height: 3.2em; font-weight: bold; text-align: left">
+              
+저는 디자인에 있어서 빠르게 변화하는 트렌드의 흐름을<br> 계속하여 파악하고,
+직접 작업해보며  나만의 스타일을 <br>조화롭고 적절하게 녹여내는 것이라고 생각합니다.<br>  
+내가 잘하는 것에만 그치지 않고 , 배움의 자세를 <br>유지하는것이 저의 목표입니다.<br> 
+ 또한 다양한 경험은 아직 발견하지 못한 능력을 발휘하여<br>가치를 창출하는 일원이 되라 확신합니다.
+      
+            
+             </h3>
+            </form>
+          
+          </div>
+
+          <div class="col-md-6 d-flex">
+          	<div class="img" style="background-image: url(images/about-img.png);"></div>
+          </div>
+        </div>--->
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+          </div>
+        </div>
+
+        <div class="row d-flex contact-info mb-5">
+         
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-phone2"></span>
+          		</div>
+          		<h3 class="mb-4">Contact Number</h3>
+	            <p><a href="tel://1234567920">010·4890·9747</a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-paper-plane"></span>
+          		</div>
+          		<h3 class="mb-4">Email Address</h3>
+	            <p><a href="mailto:info@yoursite.com">aejinp92@gmail.com</a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-globe"></span>
+          		</div>
+          		<h3 class="mb-4">Website</h3>
+	            <p><a href="#">jjolgit.cafe24.com</a></p>
+	          </div>
+          </div>
+        </div>
+        
+
+       
+      </div>
+    </section>
+		
+
+    
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
